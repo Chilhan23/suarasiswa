@@ -1,6 +1,7 @@
 <header class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="flex items-center justify-between h-16 gap-4">
+            {{-- Logo --}}
             <a href="/" class="flex-shrink-0 flex items-center gap-2">
                 <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
                     <i class="bi bi-megaphone-fill text-white text-sm"></i>
@@ -8,13 +9,15 @@
                 <span class="font-bold text-lg text-slate-900 tracking-tight hidden xs:block">SuaraSiswa</span>
             </a>
 
-            <nav class="flex items-center gap-4 md:gap-6 text-sm font-medium text-slate-500 overflow-x-auto no-scrollbar whitespace-nowrap py-2">
+            {{-- NAVIGASI: Muncul di Desktop (md:flex), Hilang di HP (hidden) --}}
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-500 whitespace-nowrap">
                 <a href="#" class="hover:text-blue-600 transition-colors">Beranda</a>
                 <a href="#aspirasi" class="hover:text-blue-600 transition-colors">Aspirasi</a>
                 <a href="#fitur" class="hover:text-blue-600 transition-colors">Fitur</a>
                 <a href="#cara-kerja" class="hover:text-blue-600 transition-colors">Cara Kerja</a>
             </nav>
 
+            {{-- AUTH BUTTONS: Tetap Muncul di HP & Laptop --}}
             <div class="flex items-center gap-2 flex-shrink-0">
                 @if(Route::has('login'))
                 @auth
@@ -50,14 +53,3 @@
         </div>
     </div>
 </header>
-
-<style>
-    /* CSS Tambahan buat ngilangin scrollbar navigasi tapi tetep bisa di-scroll */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-</style>
