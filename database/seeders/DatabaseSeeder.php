@@ -15,40 +15,7 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        // 1. ===== CREATE USERS =====
-        // Admin
-        $admin = User::firstOrCreate(
-            ['email' => 'admin@suarasiswa.com'],
-            [
-                'name'     => 'Administrator Utama',
-                'password' => Hash::make('password'),
-                'role'     => 'admin',
-            ]
-        );
-
-        // Student 1 (Rayhan)
-        $student1 = User::firstOrCreate(
-            ['email' => 'rayhan@student.com'],
-            [
-                'name'     => 'Muhammad Rayhan Ramadhani',
-                'nis'      => '12345678',
-                'password' => Hash::make('password'),
-                'class'    => 'XII RPL 1',
-                'role'     => 'student',
-            ]
-        );
-
-        // Student 2 (Rehan)
-        $student2 = User::firstOrCreate(
-            ['email' => 'rehan@student.com'],
-            [
-                'name'     => 'Rehan',
-                'nis'      => '87654321',
-                'password' => Hash::make('password'),
-                'class'    => 'XI TKJ 2',
-                'role'     => 'student',
-            ]
-        );
+        
 
         // 2. ===== CATEGORIES =====
         $categoriesData = [
