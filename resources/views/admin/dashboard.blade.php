@@ -266,15 +266,35 @@
                     <div>
                         <label class="block text-xs font-black text-slate-400 uppercase tracking-widest mb-3">Ubah Status</label>
                         <div class="grid grid-cols-3 gap-2">
-                            @foreach(['pending'=>'amber','proses'=>'sky','selesai'=>'emerald'] as $st => $col)
-                            <label class="cursor-pointer">
-                                <input type="radio" name="status" value="{{ $st }}" class="sr-only peer" x-model="selectedStatus">
-                                <div class="border-2 border-slate-100 rounded-2xl p-3 text-center transition-all peer-checked:border-{{ $col }}-400 peer-checked:bg-{{ $col }}-50">
-                                    <i class="bi bi-{{ $st === 'pending' ? 'clock-fill' : ($st === 'proses' ? 'hourglass-split' : 'check2-circle') }} text-lg text-{{ $col }}-500"></i>
-                                    <p class="text-[10px] font-black text-slate-700 mt-1 uppercase">{{ $st }}</p>
+                            {{-- Status Pending --}}
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="status" value="pending" class="sr-only peer" x-model="selectedStatus">
+                                <div class="border-2 border-slate-100 rounded-2xl p-3 text-center transition-all duration-300 
+                                            peer-checked:border-amber-400 peer-checked:bg-amber-50 peer-checked:ring-2 peer-checked:ring-amber-200 peer-checked:scale-95">
+                                    <i class="bi bi-clock-fill text-lg text-amber-500"></i>
+                                    <p class="text-[10px] font-black text-slate-700 mt-1 uppercase">Pending</p>
                                 </div>
                             </label>
-                            @endforeach
+
+                            {{-- Status Proses --}}
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="status" value="proses" class="sr-only peer" x-model="selectedStatus">
+                                <div class="border-2 border-slate-100 rounded-2xl p-3 text-center transition-all duration-300 
+                                            peer-checked:border-sky-400 peer-checked:bg-sky-50 peer-checked:ring-2 peer-checked:ring-sky-200 peer-checked:scale-95">
+                                    <i class="bi bi-hourglass-split text-lg text-sky-500"></i>
+                                    <p class="text-[10px] font-black text-slate-700 mt-1 uppercase">Proses</p>
+                                </div>
+                            </label>
+
+                            {{-- Status Selesai --}}
+                            <label class="cursor-pointer group">
+                                <input type="radio" name="status" value="selesai" class="sr-only peer" x-model="selectedStatus">
+                                <div class="border-2 border-slate-100 rounded-2xl p-3 text-center transition-all duration-300 
+                                            peer-checked:border-emerald-400 peer-checked:bg-emerald-50 peer-checked:ring-2 peer-checked:ring-emerald-200 peer-checked:scale-95">
+                                    <i class="bi bi-check2-circle text-lg text-emerald-500"></i>
+                                    <p class="text-[10px] font-black text-slate-700 mt-1 uppercase">Selesai</p>
+                                </div>
+                            </label>
                         </div>
                     </div>
 

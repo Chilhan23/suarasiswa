@@ -246,14 +246,10 @@
             </div>
 
             {{-- ===== TAB LIST ===== --}}
-            <div x-show="tab === 'list'" x-cloak>
-                @include('students.partials.list')
-            </div>
+            @include('students.partials.list')
 
             {{-- ===== TAB CREATE ===== --}}
-            <div x-show="tab === 'create'" x-cloak>
-                @include('students.partials.create')
-            </div>
+            @include('students.partials.create')
 
         </main>
     </div>
